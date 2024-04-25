@@ -5,7 +5,7 @@
   <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
-    <version>3.2.4</version>
+    <version>3.2.5</version>
     <relativePath></relativePath>
   </parent>
   <groupId>dev.dashaun.data</groupId>
@@ -47,25 +47,6 @@
   <build>
     <plugins>
       <plugin>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-maven-plugin</artifactId>
-        <executions>
-          <execution>
-            <id>build-info</id>
-            <goals>
-              <goal>build-info</goal>
-            </goals>
-          </execution>
-        </executions>
-        <configuration>
-          <image>
-            <builder>dashaun/builder:tiny</builder>
-            <createdDate>now</createdDate>
-            <name>dashaun/${project.name}:v${project.version}-${os.detected.arch}</name>
-          </image>
-        </configuration>
-      </plugin>
-      <plugin>
         <groupId>io.spring.javaformat</groupId>
         <artifactId>spring-javaformat-maven-plugin</artifactId>
         <version>0.0.40</version>
@@ -79,6 +60,28 @@
             <inherited>true</inherited>
           </execution>
         </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>build-info</id>
+            <goals>
+              <goal>build-info</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <image>
+            <builder>paketobuildpacks/builder-jammy-buildpackless-tiny</builder>
+            <buildpacks>
+              <buildpack>paketobuildpacks/java-native-image</buildpack>
+            </buildpacks>
+            <createdDate>now</createdDate>
+            <name>dashaun/${project.name}:v${project.version}-${os.detected.arch}</name>
+          </image>
+        </configuration>
       </plugin>
     </plugins>
   </build>
