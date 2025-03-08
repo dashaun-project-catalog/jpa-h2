@@ -6,7 +6,7 @@
 
  ## Prerequisites
 
-- Java 21
+- Java 17
 
  ## Quick Start
 
