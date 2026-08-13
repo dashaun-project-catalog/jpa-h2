@@ -5,7 +5,7 @@
   <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
-    <version>4.0.0</version>
+    <version>4.0.7.1</version>
     <relativePath></relativePath>
   </parent>
   <groupId>dev.dashaun.data</groupId>
@@ -14,11 +14,13 @@
   <name>${project.groupId}.${project.artifactId}</name>
   <properties>
     <java.version>17</java.version>
+    <lombok.version>1.18.46</lombok.version>
   </properties>
   <dependencies>
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-data-jpa</artifactId>
+      <version>4.0.7.1</version>
     </dependency>
     <dependency>
       <groupId>com.h2database</groupId>
@@ -29,6 +31,7 @@
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-data-jpa-test</artifactId>
       <scope>test</scope>
+      <version>4.0.7.1</version>
     </dependency>
     <dependency>
       <groupId>org.projectlombok</groupId>
@@ -38,10 +41,12 @@
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-jackson2</artifactId>
+      <version>4.0.7.1</version>
     </dependency>
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-actuator</artifactId>
+      <version>4.0.7.1</version>
     </dependency>
     <dependency>
       <groupId>org.springframework.boot</groupId>
@@ -52,11 +57,13 @@
           <artifactId>spring-boot-starter-jackson</artifactId>
         </exclusion>
       </exclusions>
+      <version>4.0.7.1</version>
     </dependency>
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-test</artifactId>
       <scope>test</scope>
+      <version>4.0.7.1</version>
     </dependency>
   </dependencies>
   <build>
